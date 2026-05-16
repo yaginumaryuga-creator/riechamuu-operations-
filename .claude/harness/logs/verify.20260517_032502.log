@@ -1,0 +1,1 @@
+\n==> noop\n$ (cd . && echo 'configure verify.steps in .claude/harness/project.json')\n'configure verify.steps in .claude/harness/project.json'

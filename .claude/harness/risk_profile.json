@@ -1,0 +1,32 @@
+{
+  "deny": [
+    "Read(./**/*.key)",
+    "Read(./**/*.pem)",
+    "Read(./**/*credentials*)",
+    "Read(./**/*id_ed25519*)",
+    "Read(./**/*id_rsa*)",
+    "Read(./**/*secret*)",
+    "Read(./**/*token*)",
+    "Read(./.env)",
+    "Read(./.env.*)"
+  ],
+  "ask": [
+    "Edit(./**/*.tf)",
+    "Edit(./**/*.tfvars)",
+    "Edit(./config/settings.yaml)",
+    "Edit(./config/settings.yml)",
+    "Edit(./config/template.yaml)",
+    "Edit(./config/template.yml)",
+    "Edit(./docker-compose.yaml)",
+    "Edit(./docker-compose.yml)",
+    "Write(./**/*.tf)",
+    "Write(./**/*.tfvars)",
+    "Write(./config/settings.yaml)",
+    "Write(./config/settings.yml)",
+    "Write(./config/template.yaml)",
+    "Write(./config/template.yml)",
+    "Write(./docker-compose.yaml)",
+    "Write(./docker-compose.yml)"
+  ],
+  "notes": []
+}

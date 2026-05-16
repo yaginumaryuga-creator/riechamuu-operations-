@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Skill(harness-new)",
+      "Bash(~/.claude/harness-kit/bin/cc-harness apply *)"
+    ]
+  }
+}

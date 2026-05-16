@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Skill(harness-new)",
+      "Bash(~/.claude/harness-kit/bin/cc-harness apply *)",
+      "Bash(bash .claude/harness/bin/fingerprint.sh)",
+      "Bash(bash .claude/harness/bin/verify.sh)",
+      "Skill(schedule)",
+      "PowerShell([System.DateTime]::UtcNow.ToString\\(\"yyyy-MM-ddTHH:mm:ssZ\"\\))"
+    ]
+  }
+}

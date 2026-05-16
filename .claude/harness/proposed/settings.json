@@ -1,0 +1,95 @@
+{
+  "env": {
+    "CC_E2E_MODE": "mock",
+    "CC_HARNESS_PROFILE": "dev-balanced",
+    "CC_UI_MODE": "off"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "python \\\"$CLAUDE_PROJECT_DIR\\\"/.claude/hooks/harness_cc_guard.py",
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "bash \\\"$CLAUDE_PROJECT_DIR\\\"/.claude/hooks/harness_stop_verify.sh",
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "TodoWrite",
+      "WebFetch",
+      "Task",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(bash .claude/harness/bin/verify.sh:*)",
+      "Bash(bash .claude/harness/bin/fingerprint.sh:*)",
+      "Bash(bash .claude/harness/bin/ui_smoke.sh:*)"
+    ],
+    "ask": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git merge:*)",
+      "Bash(git rebase:*)",
+      "Bash(git checkout:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(docker:*)",
+      "Bash(docker compose:*)",
+      "Bash(kubectl:*)",
+      "mcp__*",
+      "Edit(./**/*.tf)",
+      "Edit(./**/*.tfvars)",
+      "Edit(./config/settings.yaml)",
+      "Edit(./config/settings.yml)",
+      "Edit(./config/template.yaml)",
+      "Edit(./config/template.yml)",
+      "Edit(./docker-compose.yaml)",
+      "Edit(./docker-compose.yml)",
+      "Write(./**/*.tf)",
+      "Write(./**/*.tfvars)",
+      "Write(./config/settings.yaml)",
+      "Write(./config/settings.yml)",
+      "Write(./config/template.yaml)",
+      "Write(./config/template.yml)",
+      "Write(./docker-compose.yaml)",
+      "Write(./docker-compose.yml)"
+    ],
+    "defaultMode": "default",
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Read(./**/*id_rsa*)",
+      "Read(./**/*id_ed25519*)",
+      "Read(./**/*_secret*)",
+      "Read(./**/*secret*)",
+      "Read(./**/*token*)",
+      "Read(./**/*credentials*)"
+    ]
+  }
+}

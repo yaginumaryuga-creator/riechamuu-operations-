@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "project": {
+    "goal": "",
+    "done": ""
+  },
+  "pareto": {
+    "priorities": [
+      "safety",
+      "automation",
+      "reviewability",
+      "failure_avoidance",
+      "auditability"
+    ],
+    "profile": "dev-balanced"
+  },
+  "verify": {
+    "steps": [
+      {
+        "name": "noop",
+        "cmd": "echo 'configure verify.steps in .claude/harness/project.json'"
+      }
+    ]
+  },
+  "ui": {
+    "e2e_mode": "mock",
+    "steps": []
+  }
+}
